@@ -2,7 +2,7 @@ package files
 
 import (
 	"fmt"
-	"github.com/smira/aptly/aptly"
+	"github.com/apachelogger/aptly/aptly"
 	"io"
 	"os"
 	"path/filepath"

@@ -1,7 +1,7 @@
 package deb
 
 import (
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/utils"
 	"path/filepath"
 	"runtime"
 

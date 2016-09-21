@@ -2,12 +2,12 @@ package deb
 
 import (
 	"errors"
-	"github.com/smira/aptly/aptly"
-	"github.com/smira/aptly/console"
-	"github.com/smira/aptly/database"
-	"github.com/smira/aptly/files"
-	"github.com/smira/aptly/http"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/aptly"
+	"github.com/apachelogger/aptly/console"
+	"github.com/apachelogger/aptly/database"
+	"github.com/apachelogger/aptly/files"
+	"github.com/apachelogger/aptly/http"
+	"github.com/apachelogger/aptly/utils"
 	"io"
 	"io/ioutil"
 	"os"

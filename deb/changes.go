@@ -2,8 +2,8 @@ package deb
 
 import (
 	"fmt"
-	"github.com/smira/aptly/aptly"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/aptly"
+	"github.com/apachelogger/aptly/utils"
 	"io/ioutil"
 	"os"
 	"path/filepath"

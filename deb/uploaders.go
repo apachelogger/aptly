@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/DisposaBoy/JsonConfigReader"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/utils"
 	"os"
 )
 

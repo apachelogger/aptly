@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/AlekSi/pointer"
-	"github.com/smira/aptly/deb"
+	"github.com/apachelogger/aptly/deb"
 	"github.com/smira/commander"
 	"github.com/smira/flag"
 )

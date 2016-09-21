@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/smira/aptly/query"
+	"github.com/apachelogger/aptly/query"
 	"github.com/smira/commander"
 	"github.com/smira/flag"
 )

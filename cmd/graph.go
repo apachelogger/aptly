@@ -3,8 +3,8 @@ package cmd
 import (
 	"bytes"
 	"fmt"
-	"github.com/smira/aptly/deb"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/deb"
+	"github.com/apachelogger/aptly/utils"
 	"github.com/smira/commander"
 	"io"
 	"io/ioutil"

@@ -67,13 +67,13 @@ Binary executables (depends almost only on libc) are available for download from
 If you have Go environment set up, you can build aptly from source by running (go 1.4+ required)::
 
     go get -u github.com/mattn/gom
-    mkdir -p $GOPATH/src/github.com/smira/aptly
-    git clone https://github.com/smira/aptly $GOPATH/src/github.com/smira/aptly
-    cd $GOPATH/src/github.com/smira/aptly
+    mkdir -p $GOPATH/src/github.com/apachelogger/aptly
+    git clone https://github.com/apachelogger/aptly $GOPATH/src/github.com/apachelogger/aptly
+    cd $GOPATH/src/github.com/apachelogger/aptly
     gom -production install
     gom build -o $GOPATH/bin/aptly
 
-Aptly is using `gom <https://github.com/mattn/gom>`_ to fix external dependencies, so regular ``go get github.com/smira/aptly``
+Aptly is using `gom <https://github.com/mattn/gom>`_ to fix external dependencies, so regular ``go get github.com/apachelogger/aptly``
 should work as well, but might fail or produce different result (if external libraries got updated).
 
 If you don't have Go installed (or older version), you can easily install Go using `gvm <https://github.com/moovweb/gvm/>`_.

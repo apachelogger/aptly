@@ -1,8 +1,8 @@
 package deb
 
 import (
-	"github.com/smira/aptly/database"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/database"
+	"github.com/apachelogger/aptly/utils"
 
 	. "gopkg.in/check.v1"
 )

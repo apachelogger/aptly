@@ -2,7 +2,7 @@ package deb
 
 import (
 	"fmt"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/utils"
 	"os/exec"
 	"regexp"
 	"strings"

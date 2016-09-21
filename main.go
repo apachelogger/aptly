@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/smira/aptly/cmd"
+	"github.com/apachelogger/aptly/cmd"
 	"os"
 )
 

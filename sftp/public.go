@@ -11,8 +11,8 @@ import (
 
 	"github.com/kr/fs"
 	"github.com/pkg/sftp"
-	"github.com/smira/aptly/aptly"
-	"github.com/smira/aptly/files"
+	"github.com/apachelogger/aptly/aptly"
+	"github.com/apachelogger/aptly/files"
 	"golang.org/x/crypto/ssh"
 )
 

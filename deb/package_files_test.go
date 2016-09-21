@@ -1,8 +1,8 @@
 package deb
 
 import (
-	"github.com/smira/aptly/files"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/files"
+	"github.com/apachelogger/aptly/utils"
 	"os"
 	"path/filepath"
 

@@ -3,8 +3,8 @@ package deb
 import (
 	"bufio"
 	"fmt"
-	"github.com/smira/aptly/aptly"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/aptly"
+	"github.com/apachelogger/aptly/utils"
 	"os"
 	"path/filepath"
 	"strings"

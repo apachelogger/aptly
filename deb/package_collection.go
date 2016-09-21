@@ -3,8 +3,8 @@ package deb
 import (
 	"bytes"
 	"fmt"
-	"github.com/smira/aptly/aptly"
-	"github.com/smira/aptly/database"
+	"github.com/apachelogger/aptly/aptly"
+	"github.com/apachelogger/aptly/database"
 	"github.com/ugorji/go/codec"
 	"path/filepath"
 )

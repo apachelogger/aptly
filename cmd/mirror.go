@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/utils"
 	"github.com/smira/commander"
 	"github.com/smira/flag"
 	"strings"

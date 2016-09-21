@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/smira/aptly/api"
+	"github.com/apachelogger/aptly/api"
 	"github.com/smira/commander"
 	"github.com/smira/flag"
 	"net/http"

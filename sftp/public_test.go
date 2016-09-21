@@ -11,7 +11,7 @@ import (
 	"syscall"
 
 	"github.com/kr/fs"
-	"github.com/smira/aptly/files"
+	"github.com/apachelogger/aptly/files"
 
 	. "gopkg.in/check.v1"
 )

@@ -1,7 +1,7 @@
 package deb
 
 import (
-	"github.com/smira/aptly/database"
+	"github.com/apachelogger/aptly/database"
 	"sync"
 )
 

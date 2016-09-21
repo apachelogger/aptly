@@ -61,11 +61,11 @@ mem.png: mem.dat mem.gp
 
 src-package:
 	rm -rf aptly-$(VERSION)
-	mkdir -p aptly-$(VERSION)/src/github.com/smira/aptly/
-	cd aptly-$(VERSION)/src/github.com/smira/ && git clone https://github.com/smira/aptly && cd aptly && git checkout v$(VERSION)
-	cd aptly-$(VERSION)/src/github.com/smira/aptly && gom -production install
-	cd aptly-$(VERSION)/src/github.com/smira/aptly && find . \( -name .git -o -name .bzr -o -name .hg \) -print | xargs rm -rf
-	rm -rf aptly-$(VERSION)/src/github.com/smira/aptly/_vendor/{pkg,bin}
+	mkdir -p aptly-$(VERSION)/src/github.com/apachelogger/aptly/
+	cd aptly-$(VERSION)/src/github.com/smira/ && git clone https://github.com/apachelogger/aptly && cd aptly && git checkout v$(VERSION)
+	cd aptly-$(VERSION)/src/github.com/apachelogger/aptly && gom -production install
+	cd aptly-$(VERSION)/src/github.com/apachelogger/aptly && find . \( -name .git -o -name .bzr -o -name .hg \) -print | xargs rm -rf
+	rm -rf aptly-$(VERSION)/src/github.com/apachelogger/aptly/_vendor/{pkg,bin}
 	mkdir -p aptly-$(VERSION)/bash_completion.d
 	(cd aptly-$(VERSION)/bash_completion.d && wget https://raw.github.com/aptly-dev/aptly-bash-completion/$(VERSION)/aptly)
 	tar cyf aptly-$(VERSION)-src.tar.bz2 aptly-$(VERSION)

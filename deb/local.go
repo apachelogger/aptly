@@ -3,7 +3,7 @@ package deb
 import (
 	"bytes"
 	"fmt"
-	"github.com/smira/aptly/database"
+	"github.com/apachelogger/aptly/database"
 	"github.com/smira/go-uuid/uuid"
 	"github.com/ugorji/go/codec"
 	"log"

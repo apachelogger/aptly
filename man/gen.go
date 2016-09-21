@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/smira/aptly/cmd"
+	"github.com/apachelogger/aptly/cmd"
 	"github.com/smira/commander"
 	"github.com/smira/flag"
 	"io/ioutil"

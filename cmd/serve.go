@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/smira/aptly/aptly"
-	"github.com/smira/aptly/deb"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/aptly"
+	"github.com/apachelogger/aptly/deb"
+	"github.com/apachelogger/aptly/utils"
 	"github.com/smira/commander"
 	"github.com/smira/flag"
 	"net"

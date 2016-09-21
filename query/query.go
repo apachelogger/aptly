@@ -2,7 +2,7 @@
 package query
 
 import (
-	"github.com/smira/aptly/deb"
+	"github.com/apachelogger/aptly/deb"
 )
 
 /*

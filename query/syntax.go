@@ -2,7 +2,7 @@ package query
 
 import (
 	"fmt"
-	"github.com/smira/aptly/deb"
+	"github.com/apachelogger/aptly/deb"
 	"regexp"
 	"strings"
 	"unicode"

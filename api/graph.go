@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/smira/aptly/deb"
+	"github.com/apachelogger/aptly/deb"
 	"io"
 	"mime"
 	"os"

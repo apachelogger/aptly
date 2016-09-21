@@ -3,8 +3,8 @@ package api
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/smira/aptly/deb"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/deb"
+	"github.com/apachelogger/aptly/utils"
 	"strings"
 )
 

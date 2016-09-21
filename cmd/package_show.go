@@ -3,8 +3,8 @@ package cmd
 import (
 	"bufio"
 	"fmt"
-	"github.com/smira/aptly/deb"
-	"github.com/smira/aptly/query"
+	"github.com/apachelogger/aptly/deb"
+	"github.com/apachelogger/aptly/query"
 	"github.com/smira/commander"
 	"github.com/smira/flag"
 	"os"

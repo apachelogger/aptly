@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	ctx "github.com/smira/aptly/context"
+	ctx "github.com/apachelogger/aptly/context"
 	"github.com/smira/commander"
 	"os"
 )

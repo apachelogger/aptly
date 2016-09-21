@@ -3,10 +3,10 @@ package api
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/smira/aptly/aptly"
-	"github.com/smira/aptly/database"
-	"github.com/smira/aptly/deb"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/aptly"
+	"github.com/apachelogger/aptly/database"
+	"github.com/apachelogger/aptly/deb"
+	"github.com/apachelogger/aptly/utils"
 	"os"
 	"path/filepath"
 )

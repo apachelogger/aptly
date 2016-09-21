@@ -6,7 +6,7 @@ import (
 	"compress/gzip"
 	"fmt"
 	"github.com/mkrautz/goar"
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/utils"
 	"github.com/smira/go-xz"
 	"github.com/smira/lzma"
 	"io"

@@ -4,9 +4,9 @@ package api
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/smira/aptly/aptly"
-	"github.com/smira/aptly/deb"
-	"github.com/smira/aptly/query"
+	"github.com/apachelogger/aptly/aptly"
+	"github.com/apachelogger/aptly/deb"
+	"github.com/apachelogger/aptly/query"
 	"sort"
 	"time"
 )

@@ -2,7 +2,7 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	ctx "github.com/smira/aptly/context"
+	ctx "github.com/apachelogger/aptly/context"
 	"net/http"
 )
 

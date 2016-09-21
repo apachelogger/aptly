@@ -3,7 +3,7 @@
 package aptly
 
 import (
-	"github.com/smira/aptly/utils"
+	"github.com/apachelogger/aptly/utils"
 	"io"
 )
 
