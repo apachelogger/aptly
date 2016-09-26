@@ -46,3 +46,13 @@ notifications:
   email:
     on_success: change # default: change
     on_failure: change # default: always
+
+deploy:
+  provider: releases
+  api_key:
+    secure: OdJySdlZtq5Ia17h/KsateCJ/mASRXb1+Vs2aTTfS92AM2Zzv7+SMVVM4fEaFXeWkehieC/iuY55cm9E9mgLo+gaDrhIl+TJmhJiNyN7IwR254OX7n3HpTky48LRQilxctuc7N+JrJcb3eoFflaNat0QpyjWyOeuoQoksqxsg9j/HzcEB6NkxkRqdmmXVQIfZGontW973QwBU9133i1YRjno9GwoqRNHvCWrN9zwVONpf6NxomExTAH9ngZeOk5lYWrpVw7hrrsKfWz03eIURjibOucnk4ug1arZs+vaFbGQP+avaG/Ac6JESfB/Qz+EsMdhejTtOvDYHM0CGdJ8tjCNkPbt4WpNd7I+AwOh4PcIjo8cv/a72bKGNu3NIDTPiOOIkqlylb1In7cHvQk1x5xA6w9iIErUIum9g09BnkZOYAEAop2F3UCB4nS6YBN9NI/TR04DZHb/+q9Heh7PnZio91VPlH9aEPYS9XlWHRpD/70psxGz3dxzeracKbv6Vq8LFxWVL2hJZz+X+r5lOQIbcQRkfQAQZWdJT/DM4QIyKBzBV7J/BGc4hkgkk+daxG/2XNb9Sd5nyxpbQlgu9Bd8Gv8vHAGdYLv1tEZn/Oj9Ibol8CJfBA2mXcEI8nOxE6HNwfqBot0CfCb/GqacjC6j4HvY917byki6qD7K6v8=
+  file: pub/aptly
+  skip_cleanup: true
+  on:
+    repo: apachelogger/aptly
+    branch: blue-systems

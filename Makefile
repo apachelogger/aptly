@@ -48,6 +48,8 @@ system-test: install
 	PATH=$(BINPATH)/:$(PATH) $(PYTHON) system/run.py --long
 
 travis: $(TRAVIS_TARGET) system-test
+	[ -d pub ] || mkdir pub
+	cp $(BINPATH)/aptly pub/
 
 test:
 	$(GOM) test -v `go list ./... | grep -v vendor/` -gocheck.v=true
