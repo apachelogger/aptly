@@ -4,9 +4,13 @@ package aptly
 
 import (
 	"io"
+	"log"
+	"os"
 
 	"github.com/smira/aptly/utils"
 )
+
+var Logger = log.New(os.Stderr, "aptly: ", log.Ltime|log.Lmicroseconds|log.Lshortfile)
 
 // PackagePool is asbtraction of package pool storage.
 //

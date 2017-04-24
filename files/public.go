@@ -88,6 +88,10 @@ func (storage *PublishedStorage) LinkFromPool(publishedDirectory string, sourceP
 	baseName := filepath.Base(sourcePath)
 	poolPath := filepath.Join(storage.rootPath, publishedDirectory)
 
+	// aptly.Logger.Printf("LinkFromPool(publishedDirectory %s, sourcePool aptly.PackagePool, sourcePath %s, sourceMD5 %s, force %t)",
+	// 	publishedDirectory, sourcePath, sourceMD5, force)
+	// os.Stderr.Sync()
+
 	err := os.MkdirAll(poolPath, 0777)
 	if err != nil {
 		return err
@@ -125,6 +129,7 @@ func (storage *PublishedStorage) LinkFromPool(publishedDirectory string, sourceP
 	}
 
 	// destination doesn't exist (or forced), create link
+	aptly.Logger.Printf("    linking %s to %s", sourcePath, filepath.Join(poolPath, baseName))
 	return os.Link(sourcePath, filepath.Join(poolPath, baseName))
 }
 

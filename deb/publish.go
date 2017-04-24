@@ -479,6 +479,7 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 	if progress != nil {
 		progress.Printf("Loading packages...\n")
 	}
+	aptly.Logger.Printf("Loading packages...\n")
 
 	lists := map[string]*PackageList{}
 
@@ -513,6 +514,7 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 	if progress != nil {
 		progress.Printf("Generating metadata files and linking package files...\n")
 	}
+	aptly.Logger.Printf("Generating metadata files and linking package files...\n")
 
 	var tempDir string
 	tempDir, err = ioutil.TempDir(os.TempDir(), "aptly")
@@ -538,7 +540,8 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 		list.PrepareIndex()
 
 		contentIndexes := map[string]*ContentsIndex{}
-
+		aptly.Logger.Println("-- START PROCESSING PACKAGES --")
+		tt := time.Now()
 		err = list.ForEachIndexed(func(pkg *Package) error {
 			if progress != nil {
 				progress.AddBar(1)
@@ -554,7 +557,9 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 
 			if matches {
 				hadUdebs = hadUdebs || pkg.IsUdeb
+				aptly.Logger.Printf("-- LinkingFromPool %s %s --\n", pkg.Name, pkg.Version)
 				err = pkg.LinkFromPool(publishedStorage, packagePool, p.Prefix, component, forceOverwrite)
+				aptly.Logger.Printf("-- LinkingFromPool Done %s %s --\n", pkg.Name, pkg.Version)
 				if err != nil {
 					return err
 				}
@@ -600,11 +605,15 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 
 			return nil
 		})
+		aptly.Logger.Printf("took: %s", time.Since(tt))
+		aptly.Logger.Println("-- DONE PROCESSING PACKAGES --")
 
 		if err != nil {
 			return fmt.Errorf("unable to process packages: %s", err)
 		}
 
+		aptly.Logger.Println("-- OUT --")
+		os.Stderr.Sync()
 		for _, arch := range p.Architectures {
 			for _, udeb := range []bool{true, false} {
 				index := contentIndexes[fmt.Sprintf("%s-%v", arch, udeb)]
@@ -624,10 +633,11 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 			}
 		}
 
-		if progress != nil {
-			progress.ShutdownBar()
-		}
+		// if progress != nil {
+		// 	progress.ShutdownBar()
+		// }
 
+		aptly.Logger.Println("-- Processing UDebs --")
 		udebs := []bool{false}
 		if hadUdebs {
 			udebs = append(udebs, true)
@@ -662,6 +672,7 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 		}
 	}
 
+	aptly.Logger.Println("-- Finalizing metadata --")
 	if progress != nil {
 		progress.Printf("Finalizing metadata files...\n")
 	}
@@ -721,11 +732,13 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 		return err
 	}
 
+	aptly.Logger.Println("renaming files")
 	err = indexes.RenameFiles()
 	if err != nil {
 		return err
 	}
 
+	aptly.Logger.Println("-- Publish Done --")
 	return nil
 }
 
