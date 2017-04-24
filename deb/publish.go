@@ -678,10 +678,12 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 	}
 	tt := time.Now()
 
+	t2 := time.Now()
 	err = indexes.FinalizeAll(progress)
 	if err != nil {
 		return err
 	}
+	aptly.Logger.Printf("finalized indexes %s", time.Since(t2))
 
 	release := make(Stanza)
 	release["Origin"] = p.GetOrigin()
@@ -728,10 +730,12 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 		progress.Flush()
 	}
 
+	t2 = time.Now()
 	err = releaseFile.Finalize(signer)
 	if err != nil {
 		return err
 	}
+	aptly.Logger.Printf("finalized release %s\n", time.Since(t2))
 
 	aptly.Logger.Println("renaming files")
 	err = indexes.RenameFiles()
