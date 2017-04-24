@@ -676,6 +676,7 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 	if progress != nil {
 		progress.Printf("Finalizing metadata files...\n")
 	}
+	tt := time.Now()
 
 	err = indexes.FinalizeAll(progress)
 	if err != nil {
@@ -737,6 +738,7 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 	if err != nil {
 		return err
 	}
+	aptly.Logger.Printf("finalized %s\n", time.Since(tt).String())
 
 	aptly.Logger.Println("-- Publish Done --")
 	return nil
