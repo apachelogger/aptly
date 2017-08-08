@@ -1,4 +1,5 @@
 import os
+import glob
 import hashlib
 import inspect
 import zlib
@@ -27,8 +28,18 @@ class PublishRepo1Test(BaseTest):
     runCmd = "aptly publish repo -keyring=${files}/aptly.pub -secret-keyring=${files}/aptly.sec -distribution=maverick local-repo"
     gold_processor = BaseTest.expand_environ
 
+    def run(self):
+        self.tmpdirs = glob.glob('/tmp/aptly*')
+        super(PublishRepo1Test, self).run()
+
     def check(self):
         super(PublishRepo1Test, self).check()
+
+        // During the publish run aptly will keep a temporary database in
+        // a tmpdir. Make sure this is in fact cleaned up properly.
+        for tmpdir in glob.glob('/tmp/aptly*'):
+            if tmpdir not in self.tmpdirs:
+                raise Exception("new dangling tmpdir after publish %s", tmpdir)
 
         self.check_exists('public/dists/maverick/InRelease')
         self.check_exists('public/dists/maverick/Release')

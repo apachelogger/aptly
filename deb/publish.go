@@ -473,8 +473,8 @@ func (p *PublishedRepo) Publish(packagePool aptly.PackagePool, publishedStorageP
 	if err != nil {
 		return err
 	}
+	defer tempDB.Drop() // Processed in reverse order, close before drop.
 	defer tempDB.Close()
-	defer tempDB.Drop()
 
 	if progress != nil {
 		progress.Printf("Loading packages...\n")
